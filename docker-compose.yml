@@ -1,0 +1,29 @@
+mongodb:
+    build: ./images/mongo
+    container_name: mongodb
+    ports:
+        - "27017:27017"
+    environment:
+        JOURNALING: "yes"
+        AUTH: "yes"
+        MONGODB_USER: "hunter"
+        MONGODB_PASS: "541R4evB"
+    restart: always
+
+redis:
+    build: ./images/redis
+    container_name: redis 
+    ports:
+        - "6379:6379"
+    restart: always
+
+mysql:
+    build: ./images/mysql
+    container_name: mysql
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "T41vF!x2L4"
+        MYSQL_USER: "hunter"
+        MYSQL_PASSWORD: "O!g3L70B%F"
+    restart: always
